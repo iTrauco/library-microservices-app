@@ -81,6 +81,17 @@ app.get('/book/:id', (req, res) => {
         }
     })
 })
+
+// DELETE 'BOOK' FROM DB
+app.delete('/book/:id', (req, res) => {
+    Book.findOneAndRemove(req.params.id).then(() => {
+        res.send('Book successfully deleted from DB...')
+    }).catch(err => {
+        if(err) {
+            throw err;
+        }
+    })
+})
 //
 //////=========================================================
 // CONFIGURE SERVER
