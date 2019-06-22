@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 // LOAD MONGOOSE |
 const mongoose = require('mongoose');
+// IMPORT MODEL | LOAD BOOK COLLECTION
+require('./Book')
+const Book = mongoose.model('Book')
 //
 //////=========================================================
 // CONFIGURE MONGODB CONNECTION w/ SECURED CREDENTIALS
@@ -23,14 +26,31 @@ const PORT = 3333;
 //
 //////=========================================================
 //// CONFIGURE ROUTES 
+
 // GET FUNCTION |
 app.get('/', (req, res) =>  {
     res.send('This is the \'books\' service...');
 })
+
 // POST(CREATE) FUNCTION |
 app.post('/book', (req, res) => {
-    console.log(req.body)
-    res.send('Testing book route... Success!!!')
+    const newBook = {
+        title: req.body.title,
+        author: req.body.author,
+        numOfPages: req.body.numOfPages,
+        publisher: req.body.publisher
+    }
+// CREATE A NEW BOOK |
+    const book = new Book(newBook)
+
+    book.save().then(() => {
+        console.log('New Book Created')
+    }).catch((err) => {
+        if(err){
+            throw err;
+        }
+    })
+    res.send("A new book has been successfully created...")
 })
 //
 //////=========================================================
