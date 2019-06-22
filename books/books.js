@@ -34,12 +34,14 @@ app.get('/', (req, res) =>  {
 
 // POST(CREATE) FUNCTION |
 app.post('/book', (req, res) => {
+
     const newBook = {
         title: req.body.title,
         author: req.body.author,
         numOfPages: req.body.numOfPages,
         publisher: req.body.publisher
     }
+    
 // CREATE A NEW BOOK |
     const book = new Book(newBook)
 

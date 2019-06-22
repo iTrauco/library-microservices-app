@@ -13,4 +13,4 @@ mongoose.model('Customer', {
         type: String, 
         require: true
     }
-})
+});
