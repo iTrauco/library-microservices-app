@@ -52,6 +52,14 @@ app.post('/book', (req, res) => {
     })
     res.send("A new book has been successfully created...")
 })
+// GET | LIST ALL 'BOOKS' OF THE SERVICE
+app.get('books', (req, res) => {
+    
+    Book.find().then((books) => {
+        console.log(books)
+    })
+})
+
 //
 //////=========================================================
 // CONFIGURE SERVER
