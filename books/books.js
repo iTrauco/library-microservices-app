@@ -18,7 +18,7 @@ const { mongoURI } = require('../config/keys');
 
 const mongoURL = `${mongoURI}`;
 
-mongoose.connect(mongoURL, () => {
+mongoose.connect(mongoURL, { useNewUrlParser: true }, () => {
     console.log('Connected to MongoDB...');
 });
 
@@ -41,7 +41,7 @@ app.post('/book', (req, res) => {
         numOfPages: req.body.numOfPages,
         publisher: req.body.publisher
     }
-    
+
 // CREATE A NEW BOOK |
     const book = new Book(newBook)
 
