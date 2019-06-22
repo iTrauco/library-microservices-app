@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 mongoose.model('Book', {
-    // ATTRIBUTES
+    // ATTRIBUTES | title, author, number of pages, and publisher
     title: {
         type: String, 
         required: true
