@@ -1,11 +1,17 @@
-# Node-Microservices-App
+# Library-Microservices-App
  
- A library microservice-architecture application built with NodeJS, Express, and MongoDB. 
+ A library microservices app built with NodeJS, Express, and MongoDB. 
 
  ### Purpose
-This repo was created as a 'redo' of several past attempts to master the process, workflow, and concepts related to microservice architecture after several weeks of indepth study on the topic. 
+This repo was created as a 'redo' for several past attempts to understand the processes, workflows, and technical concepts central to microservice-based application architecture with NoSQL databases and the 'serverless' API framework. 
 
-[A formerly 'Private' version of this application has been archived and made 'Public' for review here. ](https://github.com/iTrauco/node-mongodb-microservice-app)
+[A formerly 'Private' version of this application has been archived and made 'Public' for review. ](https://github.com/iTrauco/node-mongodb-microservice-app)
 
 ### Focus
-After several weeks of study, my goal is to 'redo' my past attempts at microservice and serverless applications with a focus on security, form, and workflow.  
+After several weeks of in-depth study, I am rebuilding several previously created microservice and serverless applications from scratch with an emphasis on proper form, workflow, and security.
+
+### Preview
+The the only visual previews available for the various branches of this repo are concerned with TDD, if available, they will be included on the 'Summary/Overview' section of previously merged 'Pull Requests.'
+
+Pull Requests > Closed > *Click on the desired PR*
+
