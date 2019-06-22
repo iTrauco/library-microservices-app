@@ -9,7 +9,7 @@ mongoose.model('Book', {
         required: true
     },
     author: {
-        typ: String, 
+        type: String, 
         require: true
     },
     numOfPages: {
