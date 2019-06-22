@@ -18,7 +18,7 @@ const { mongoURI } = require('../config/customers');
 
 const mongoURL = `${mongoURI}`;
 
-mongoose.connect(mongoURL, () => {
+mongoose.connect(mongoURL, { useNewUrlParser: true }, () => {
     console.log('Connected to MongoDB...');
 });
 
