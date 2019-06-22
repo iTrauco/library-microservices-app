@@ -14,11 +14,11 @@ const Customer = mongoose.model('Customer')
 //
 //////=========================================================
 // CONFIGURE CONNECTION TO MONGODB
-const { MongoURI } = require('../config/customers');
+const { mongoURI } = require('../config/customers');
 
-const MongoURL = `${MongoURI}`;
+const mongoURL = `${mongoURI}`;
 
-mongoose.connect(MongoURL, () => {
+mongoose.connect(mongoURL, () => {
     console.log('Connected to MongoDB...');
 });
 
@@ -26,6 +26,7 @@ const PORT = 4444;
 //
 //////=========================================================
 // CONFIGURE ROUTES
+
 
 // POST FUNCTION |
 app.post('/customer', (req, res) => {
