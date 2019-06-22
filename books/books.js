@@ -64,7 +64,7 @@ app.get('/books', (req, res) => {
         }
     })
 })
-// GET 'BOOK' BY ID
+// GET A SINGLE 'BOOK' BY ID
 app.get('/book/:id', (req, res) => {
     Book.findById(req.params.id).then((book) => {
     
