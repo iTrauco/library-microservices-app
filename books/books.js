@@ -52,14 +52,35 @@ app.post('/book', (req, res) => {
     })
     res.send("A new book has been successfully created...")
 })
-// GET | LIST ALL 'BOOKS' OF THE SERVICE
-app.get('books', (req, res) => {
+// GET | LISTS ALL 'BOOKS' OF THE SERVICE
+app.get('/books', (req, res) => {
     
     Book.find().then((books) => {
-        console.log(books)
+        // console.log(books)
+        res.json(books)
+    }).catch(err => {
+        if(err){
+            throw err;
+        }
     })
 })
+// GET 'BOOK' BY ID
+app.get('/book/:id', (req, res) => {
+    Book.findById(req.params.id).then((book) => {
+    
+        if(book){
+            // Return book data if it exists
+            res.json(book)
+        } else {
+            res.sendStatus(404);
+        }
 
+    }).catch(err => {
+        if(err) {
+            throw err;
+        }
+    })
+})
 //
 //////=========================================================
 // CONFIGURE SERVER
