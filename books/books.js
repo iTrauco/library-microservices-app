@@ -2,11 +2,15 @@
 // LOAD EXPRESS |
 const express = require('express');
 const app = express();
+// LOAD BODY-PARSER
+const bodyParser = require('body-parser');
+// CONFIGURE BODY-PARSER
+app.use(bodyParser.json());
 // LOAD MONGOOSE |
 const mongoose = require('mongoose');
 //
 //////=========================================================
-// SECURE MONGODB CONNECTION |
+// CONFIGURE MONGODB CONNECTION w/ SECURED CREDENTIALS
 const { mongoURI } = require('../config/keys');
 
 const mongoURL = `${mongoURI}`;
@@ -23,9 +27,10 @@ const PORT = 3333;
 app.get('/', (req, res) =>  {
     res.send('This is the \'books\' service...');
 })
-// POST FUNCTION |
-app.post('/', (req, res) => {
-
+// POST(CREATE) FUNCTION |
+app.post('/book', (req, res) => {
+    console.log(req.body)
+    res.send('Testing book route... Success!!!')
 })
 //
 //////=========================================================
