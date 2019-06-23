@@ -1,19 +1,19 @@
 //////=========================================================
-// LOAD EXPRESS |
+// LOAD EXPRESS
 const express = require('express');
 const app = express();
 // LOAD BODY-PARSER
 const bodyParser = require('body-parser');
 // CONFIGURE BODY-PARSER
 app.use(bodyParser.json());
-// LOAD MONGOOSE |
+// LOAD MONGOOSE
 const mongoose = require('mongoose');
-// IMPORT MODEL | LOAD BOOK COLLECTION
+// IMPORT MODEL | LOAD COLLECTION
 require('./Book')
 const Book = mongoose.model('Book')
 //
 //////=========================================================
-// CONFIGURE MONGODB CONNECTION w/ SECURED CREDENTIALS
+// CONFIGURE CONNECTION TO MONGODB
 const { mongoURI } = require('../config/keys');
 
 const mongoURL = `${mongoURI}`;
@@ -27,12 +27,12 @@ const PORT = 3333;
 //////=========================================================
 //// CONFIGURE ROUTES 
 
-// GET FUNCTION |
+// GET FUNCTION
 app.get('/', (req, res) =>  {
     res.send('This is the \'books\' service...');
 })
 
-// POST(CREATE) FUNCTION |
+// POST(CREATE) FUNCTION
 app.post('/book', (req, res) => {
 
     const newBook = {
@@ -42,7 +42,7 @@ app.post('/book', (req, res) => {
         publisher: req.body.publisher
     }
 
-// CREATE A NEW BOOK |
+// CREATE A NEW BOOK 
     const book = new Book(newBook)
 
     book.save().then(() => {
