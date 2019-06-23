@@ -1,6 +1,8 @@
+// LOAD MONGOOSE
 const mongoose = require('mongoose')
 
 mongoose.model('Customer', {
+    // ATTRIBUTES | name, age,
     name: {
         type: String, 
         require: true

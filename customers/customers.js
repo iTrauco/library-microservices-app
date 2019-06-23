@@ -1,7 +1,7 @@
 //////=========================================================
 // LOAD EXPRESS
 const express = require('express');
-const app = express()
+const app = express();
 // LOAD BODY-PARSER
 const bodyParser = require('body-parser');
 // CONFIGURE BODY-PARSER
@@ -27,8 +27,7 @@ const PORT = 4444;
 //////=========================================================
 // CONFIGURE ROUTES
 
-
-// POST FUNCTION |
+// POST
 app.post('/customer', (req, res) => {
 
     const newCustomer = {
