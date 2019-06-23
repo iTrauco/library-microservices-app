@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 mongoose.model('Customer', {
-    // ATTRIBUTES | name, age,
+    // ATTRIBUTES | name, age, address
     name: {
         type: String, 
         require: true

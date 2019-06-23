@@ -18,7 +18,11 @@ const { mongoURI } = require('../config/keys');
 
 const mongoURL = `${mongoURI}`;
 
-mongoose.connect(mongoURL, { useNewUrlParser: true }, () => {
+mongoose.connect(mongoURL, 
+    { 
+    useNewUrlParser: true, 
+    useFindAndModify: false  
+    }, () => {
     console.log('Connected to MongoDB...');
 });
 
@@ -71,7 +75,7 @@ app.get('/book/:id', (req, res) => {
     Book.findById(req.params.id).then((book) => {
     
         if(book){
-            // Return book data if it exists
+            // Return book data if valid 'id' exists
             res.json(book)
         } else {
             res.sendStatus(404);
@@ -86,7 +90,7 @@ app.get('/book/:id', (req, res) => {
 
 // DELETE 'BOOK' FROM DB
 app.delete('/book/:id', (req, res) => {
-    Book.findOneAndRemove(req.params.id).then(() => {
+    Book.findByIdAndRemove(req.params.id).then(() => {
         res.send('Book successfully deleted from DB...')
     }).catch(err => {
         if(err) {

@@ -18,7 +18,11 @@ const { mongoURI } = require('../config/customers');
 
 const mongoURL = `${mongoURI}`;
 
-mongoose.connect(mongoURL, { useNewUrlParser: true }, () => {
+mongoose.connect(mongoURL, 
+    { 
+        useNewUrlParser: true, 
+        useFindAndModify: false 
+    }, () => {
     console.log('Connected to MongoDB...');
 });
 
@@ -47,6 +51,45 @@ app.post('/customer', (req, res) => {
         }
     })
     res.send('A new customer has been created...')
+})
+
+// GET A LIST OF EVERY 'CUSTOMER' IN THE DB
+app.get('/customers', (req, res) => {
+    Customer.find().then((customers) => {
+        res.json(customers)
+    }).catch((err) => {
+        if(err) {
+            throw err;
+        }
+    })
+})
+
+// GET A SINGLE 'CUSTOMER' BY ID
+app.get('/customer/:id', (req,res) => {
+
+    Customer.findById(req.params.id).then((customer) => {
+        if(customer) {
+            // Return customer if valid 'id' exists
+            res.json(customer)
+        } else {
+            res.send('Invalid ID...')
+        }
+    }).catch((err) => {
+        if(err) {
+            throw err;
+        }
+    })
+})
+
+// DELETE CUSTOMER FROM DB
+app.delete('/customer/:id', (req, res) => {
+    Customer.findByIdAndRemove(req.params.id).then(() => {
+        res.send('Customer successfully deleted from DB...')
+    }).catch((err) => {
+        if(err) {
+            throw err;
+        }
+    })
 })
 
 //
