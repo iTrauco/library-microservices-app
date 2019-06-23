@@ -27,7 +27,7 @@ const PORT = 4444;
 //////=========================================================
 // CONFIGURE ROUTES
 
-// POST FUNCTION
+// POST
 app.post('/customer', (req, res) => {
 
     const newCustomer = {

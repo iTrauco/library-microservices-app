@@ -27,12 +27,12 @@ const PORT = 3333;
 //////=========================================================
 //// CONFIGURE ROUTES 
 
-// GET FUNCTION
+// GET
 app.get('/', (req, res) =>  {
     res.send('This is the \'books\' service...');
 })
 
-// POST(CREATE) FUNCTION
+// POST
 app.post('/book', (req, res) => {
 
     const newBook = {
@@ -54,7 +54,7 @@ app.post('/book', (req, res) => {
     })
     res.send("A new book has been successfully created...")
 })
-// GET | LISTS ALL 'BOOKS' OF THE SERVICE
+// GET LIST OF EVERY 'BOOK' IN THE DB
 app.get('/books', (req, res) => {
     
     Book.find().then((books) => {

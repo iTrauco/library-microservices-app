@@ -1,5 +1,5 @@
 //////=========================================================
-// LOAD MONGOOSE |
+// LOAD MONGOOSE
 const mongoose = require('mongoose');
 
 mongoose.model('Book', {
