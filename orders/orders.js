@@ -20,7 +20,8 @@ const mongoURL = `${mongoURI}`;
 
 mongoose.connect(mongoURL, 
     {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useFindAndModify: false 
     }, () => {
     console.log('\'Orders\' service connected to MongoDB...');
 })
