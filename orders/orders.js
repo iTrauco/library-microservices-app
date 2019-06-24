@@ -25,8 +25,33 @@ mongoose.connect(mongoURL,
     console.log('\'Orders\' service connected to MongoDB...');
 })
 
-
 const PORT = 5555;
+//
+//////=========================================================
+//// CONFIGURE ROUTES 
+
+// POST
+app.post('/order', (req, res) => {
+
+    const newOrder = {
+        CustomerID: req.body.CustomerID,
+        BookID: req.body.BookID,
+        checkoutDate: req.body.checkoutDate, 
+        returnDate: req.body.returnDate
+    }
+
+// CREATE NEW ORDER
+    const order = new Order(newOrder)
+
+    order.save().then(() => {
+        console.log('New Order Created!')
+    }).catch((err) =>{
+        if(err) {
+            throw err;
+        }
+    })
+    res.send('A new \'order\' has been successfully created...')
+})
 
 
 

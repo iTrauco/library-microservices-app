@@ -20,6 +20,7 @@ const mongoURL = `${mongoURI}`;
 
 mongoose.connect(mongoURL, 
     { 
+        // useNewUrlParser: true 
         useNewUrlParser: true, 
         useFindAndModify: false  
     }, () => {
@@ -46,17 +47,17 @@ app.post('/book', (req, res) => {
         publisher: req.body.publisher
     }
 
-// CREATE A NEW BOOK 
+    // CREATE A NEW BOOK 
     const book = new Book(newBook)
 
     book.save().then(() => {
-        console.log('New Book Created')
+        console.log('New Book Created!')
     }).catch((err) => {
         if(err){
             throw err;
         }
     })
-    res.send("A new book has been successfully created...")
+    res.send("A new \'book\' has been successfully created...")
 })
 // GET LIST OF EVERY 'BOOK' IN THE DB
 app.get('/books', (req, res) => {
@@ -87,7 +88,6 @@ app.get('/book/:id', (req, res) => {
         }
     })
 })
-
 // DELETE 'BOOK' FROM DB
 app.delete('/book/:id', (req, res) => {
     Book.findByIdAndRemove(req.params.id).then(() => {
