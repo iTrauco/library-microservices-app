@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 // LOAD MONGOOSE
 const mongoose = require('mongoose');
 // IMPORT MODEL | LOAD COLLECTION
-
+require('./Order')
+const Order = mongoose.model('Order')
 //
 //////=========================================================
 // CONFIGURE CONNECTION TO MONGODB
