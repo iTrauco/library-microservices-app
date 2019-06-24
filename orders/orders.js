@@ -21,7 +21,7 @@ mongoose.connect(mongoURL,
     {
         useNewUrlParser: true
     }, () => {
-        console.log('\'Orders\' service connected to MongoDB...');
+    console.log('\'Orders\' service connected to MongoDB...');
 })
 
 
@@ -33,5 +33,5 @@ const PORT = 5555;
 //////=========================================================
 // CONFIGURE SERVER
 app.listen (PORT, () => {
-    console.log(`Orders services is now listening on port ${PORT}`);
+    console.log(`Orders services is now listening on port ${PORT}...`);
 })
