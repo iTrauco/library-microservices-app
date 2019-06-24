@@ -2,6 +2,7 @@
 // LOAD MONGOOSE
 const mongoose = require('mongoose');
 
+// CREATE/DEFINE MODEL
 mongoose.model('Book', {
     // ATTRIBUTES | title, author, number of pages, and publisher
     title: {

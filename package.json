@@ -1,0 +1,28 @@
+{
+  "name": "library-microservices-app",
+  "version": "1.0.0",
+  "description": "A library microservices app built to track the checkout and return dates of books by customers",
+  "main": "index.js",
+  "scripts": {
+    "books": "nodemon books/books.js",
+    "customers": "nodemon customers/customers.js",
+    "orders": "nodemon orders/orders.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iTrauco/node-microservices-app.git"
+  },
+  "keywords": [
+    "Microservice",
+    "MongoDB",
+    "Node",
+    "Express"
+  ],
+  "author": "Chris Trauco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iTrauco/node-microservices-app/issues"
+  },
+  "homepage": "https://github.com/iTrauco/node-microservices-app#readme"
+}
