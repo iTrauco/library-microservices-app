@@ -23,7 +23,7 @@ mongoose.connect(mongoURL,
     useNewUrlParser: true, 
     useFindAndModify: false  
     }, () => {
-    console.log('Connected to MongoDB...');
+    console.log('\'Books\' service connected to MongoDB...');
 });
 
 const PORT = 3333;
