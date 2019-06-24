@@ -20,9 +20,8 @@ const mongoURL = `${mongoURI}`;
 
 mongoose.connect(mongoURL, 
     { 
-        // useNewUrlParser: true 
-        useNewUrlParser: true, 
-        useFindAndModify: false  
+        seNewUrlParser: true, 
+        useFindAndModify: false 
     }, () => {
         console.log('\'Books\' service connected to MongoDB...');
 });
@@ -34,7 +33,7 @@ const PORT = 3333;
 
 // GET
 app.get('/', (req, res) =>  {
-    res.send('This is the \'books\' service...');
+    res.json('This is the \'books\' service...');
 })
 
 // POST
