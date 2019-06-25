@@ -35,8 +35,8 @@ const PORT = 5555;
 app.post('/order', (req, res) => {
 
     const newOrder = {
-        CustomerID: req.body.CustomerID,
-        BookID: req.body.BookID,
+        CustomerID: mongoose.Types.ObjectId(req.body.CustomerID), // Converts string data to 'ObjectID'
+        BookID: mongoose.Types.ObjectId(req.body.BookID), // Converts string data to 'ObjectID'
         checkoutDate: req.body.checkoutDate, 
         returnDate: req.body.returnDate
     }
@@ -53,9 +53,6 @@ app.post('/order', (req, res) => {
     })
     res.send('A new \'order\' has been successfully created...')
 })
-
-
-
 //
 //////=========================================================
 // CONFIGURE SERVER
