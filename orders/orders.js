@@ -41,11 +41,12 @@ app.post('/order', (req, res) => {
         returnDate: req.body.returnDate
     }
 
-// CREATE NEW ORDER
+    // CREATE NEW ORDER
     const order = new Order(newOrder)
 
     order.save().then(() => {
-        console.log('New Order Created!')
+        // console.log('New Order Created!')
+        res.send('Order successfully created...')
     }).catch((err) =>{
         if(err) {
             throw err;
@@ -53,6 +54,20 @@ app.post('/order', (req, res) => {
     })
     res.send('A new \'order\' has been successfully created...')
 })
+
+// GET LIST OF EVERY 'ORDER' IN DB
+app.get('/orders', (req, res) => {
+
+    Order.find().then((books) => {
+        res.json(books)
+    }).catch((err) => {
+        if(err) {
+            throw err;
+        }
+    })
+
+})
+
 //
 //////=========================================================
 // CONFIGURE SERVER
