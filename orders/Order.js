@@ -13,11 +13,11 @@ mongoose.model('Order', {
         type: mongoose.SchemaTypes.ObjectId,
         required: true
     },
-    CheckoutDate: {
+    checkoutDate: {
         type: Date,
         required: true
     },
-    ReturnDate: {
+    returnDate: {
         type: Date,
         required: true
     }
