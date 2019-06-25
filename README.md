@@ -15,3 +15,4 @@ The the only visual previews available for the various branches of this repo are
 
 Pull Request > Closed > *Click on the desired PR*
 
+![Example](https://github.com/iTrauco/library-microservices-app/blob/master/Resources/preview.gif)
