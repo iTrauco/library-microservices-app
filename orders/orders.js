@@ -45,14 +45,13 @@ app.post('/order', (req, res) => {
     const order = new Order(newOrder)
 
     order.save().then(() => {
-        // console.log('New Order Created!')
+        console.log('New Order Created!')
         res.send('Order successfully created...')
-    }).catch((err) =>{
+    }).catch((err) => {
         if(err) {
             throw err;
         }
     })
-    res.send('A new \'order\' has been successfully created...')
 })
 
 // GET LIST OF EVERY 'ORDER' IN DB
