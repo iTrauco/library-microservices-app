@@ -3,7 +3,7 @@
  A library microservices app built with NodeJS, Express, and MongoDB. 
  
 ## Project Status
-Completed for use as 'Master' Microservice Template. 
+Completed for use as a 'Master' Microservice Template. 
 
 ### Purpose
 This repo was created as a 'redo' for several past attempts to learn the processes, workflows, and technical concepts central to microservice-based application architecture with NoSQL databases and the 'serverless' API framework. 
