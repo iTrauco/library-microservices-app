@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 // LOAD MONGOOSE
 const mongoose = require('mongoose');
+// LOAD AXIOS
+const axios = require('axios');
 // IMPORT MODEL | LOAD COLLECTION
 require('./Order')
 const Order = mongoose.model('Order')
@@ -62,6 +64,29 @@ app.get('/orders', (req, res) => {
     }).catch((err) => {
         if(err) {
             throw err;
+        }
+    })
+
+})
+
+// GET ID TO DISPLAY CUSTOMER NAME AND BOOK TITLE INSTEAD OF DB 'ID'
+app.get('/order/:id', (req, res) => {
+
+    Order.findById(req.params.id).then((order) => {
+        if(order) {
+
+            axios.get('http://localhost:4444/customer/' + order.CustomerID).then((response) => {
+                // console.log(response)
+
+            const orderObject = { customerName: response.data.name, bookTitle: ''}
+
+            })
+
+            res.send('Testing response...')
+
+            // If order is valid make a request to each service
+        } else {
+            res.send('Invalid Order')
         }
     })
 
