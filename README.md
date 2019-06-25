@@ -14,7 +14,7 @@ This repo was created as a 'redo' for several past attempts to learn the process
 After several weeks of in-depth study, I am rebuilding my previously created microservice and serverless applications from scratch with an emphasis on proper form, workflow, and security.
 
 ### Preview
-The the only visual previews available for the various branches of this repo are concerned with TDD, if available, they will be included on the 'Summary/Overview' section of previously merged 'Pull Requests.'
+The only visual previews available for the various branches of this repo are concerned with TDD, if available, will be included on the 'Summary/Overview' section of previously merged 'Pull Requests.'
 
 Pull Request > Closed > *Click on the desired PR*
 
