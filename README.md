@@ -1,8 +1,11 @@
 # Library-Microservices-App
  
  A library microservices app built with NodeJS, Express, and MongoDB. 
+ 
+## Project Status
+Completed for use as 'Master' Microservice Template. 
 
- ### Purpose
+### Purpose
 This repo was created as a 'redo' for several past attempts to learn the processes, workflows, and technical concepts central to microservice-based application architecture with NoSQL databases and the 'serverless' API framework. 
 
 [A formerly 'Private' version of this application has been shelved and made 'Public' for review. ](https://github.com/iTrauco/node-mongodb-microservice-app)
