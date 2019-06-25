@@ -84,7 +84,6 @@ app.get('/order/:id', (req, res) => {
 
                 orderObject.bookTitle = response.data.title
                 res.json(orderObject)
-
             })
 
         })
