@@ -98,10 +98,6 @@ app.delete('/book/:id', (req, res) => {
     })
 })
 
-// ROUTE TO LIST ORDER BY ID w/ CUSTOMER NAME AND BOOK TITLE INSTEAD OF 'ID'
-
-
-
 //
 //////=========================================================
 // CONFIGURE SERVER

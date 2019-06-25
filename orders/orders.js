@@ -69,7 +69,7 @@ app.get('/orders', (req, res) => {
 
 })
 
-// GET ID TO DISPLAY CUSTOMER NAME AND BOOK TITLE INSTEAD OF DB 'ID'
+// GET CROSS-SERVICE REQUEST TO DISPLAY CUSTOMER NAME AND BOOK TITLE INSTEAD OF DB 'ID'
 app.get('/order/:id', (req, res) => {
 
     Order.findById(req.params.id).then((order) => {
@@ -80,16 +80,20 @@ app.get('/order/:id', (req, res) => {
 
             const orderObject = { customerName: response.data.name, bookTitle: ''}
 
+            axios.get('http://localhost:3333/book/' + order.BookID).then((response) => {
+
+                orderObject.bookTitle = response.data.title
+                res.json(orderObject)
+
             })
 
-            res.send('Testing response...')
+        })
 
             // If order is valid make a request to each service
         } else {
             res.send('Invalid Order')
         }
     })
-
 })
 
 //
